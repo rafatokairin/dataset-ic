@@ -11,7 +11,7 @@ def load_points(filename):
 def euclidean_distance(p1, p2):
     return np.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
 
-def calculate_similarity(file1, file2, threshold=1.0):
+def calculate_similarity(file1, file2, threshold=4.0):
     points_original = load_points(file1)
     points_interpolated = load_points(file2)
     
@@ -41,8 +41,8 @@ def calculate_similarity(file1, file2, threshold=1.0):
     return perc_original, perc_interpolado, media_diferenca
 
 # Exemplo de uso
-file1 = 'mmg1r-f.txt'
-file2 = 'mmg1r-1;4-noderem.txt'
+file1 = 'mmg4-f.txt'
+file2 = 'spline3.txt'
 perc_original, perc_interpolado, media_diferenca = calculate_similarity(file1, file2)
 
 # Limitar a porcentagem a 100%
